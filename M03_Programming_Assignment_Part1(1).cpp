@@ -39,8 +39,15 @@ template <typename T> void getData(T &grades) {
   for (int i = 1; i <= 16; i++) {
     cout << "Enter the grade of the quiz for module " << i << " : ";
     while (true) {
+        cin>>score;
+
+        if (cin.fail()) {
+            cin.clear();  // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Ignore bad input
+            cout << "Invalid input. Please enter a valid number: ";
+            continue;  // Retry input
+        }
       try {
-        cin >> score;
         grades.push_back(Grade(score));
         break;
       } catch (const invalid_argument &e) {
