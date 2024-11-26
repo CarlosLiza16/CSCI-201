@@ -9,7 +9,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <limits>
 
 using namespace std;
 
@@ -224,7 +224,7 @@ int main(){
         {
             case 1: 
                 cout<<"Enter the Player ID: ";cin>> id;
-                //cin.ignore(); //clean the buffer, extra space 
+                cin.ignore(); //clean the buffer, extra space 
                 cout<<"Enter the PLayer Name: ";
                 getline(cin,name);
                 team.push_back(new QuarterBack(id, name));
@@ -319,8 +319,11 @@ int main(){
                 break;
             
             default:
+                cin.clear();
+                // Ignore invalid input until the next newline
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout<<"Wrong option entered. Try again"<<endl;
-                break;
+                continue;
         }
 
         cout<<"\nDo you want to keep adding more players? enter [Y] for yes or [N] for no: ";cin>>answer;
@@ -332,6 +335,6 @@ int main(){
         cout<< player->toString() <<endl;
         player->play();
     }
-    cout<<"The total players is: "<< team.size()<<endl;
+    cout<<"The total players are: "<< team.size()<<endl;
     return 0;
 }
