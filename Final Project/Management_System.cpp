@@ -1,8 +1,9 @@
 /* Program name: Final Projet - Management System
 * Author: Carlos Lizarazu 
-* Date last updated: 12/dd/2024
-* Purpose: create a cube object and display its volume. The class will have methods for the user to access the object,
-  mutate the object, and find the volumen
+* Date last updated: 12/13/2024
+* Purpose: The Management System is designed to streamline to track office inventory. 
+* Allow users to register new items arriving at the office, update inventory as items are used, add new employees, and place orders for more products. 
+* The program will also be able to handle incorrect wrong information and tell user where is the error happening. 
 */
 
 #include <iostream>
